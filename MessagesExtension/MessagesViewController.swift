@@ -28,6 +28,7 @@ class MessagesViewController: MSMessagesAppViewController {
         // This will happen when the extension is about to present UI.
         
         // Use this method to configure the extension and restore previously stored state.
+        presentViewController(with: presentationStyle)
     }
     
     override func didResignActive(with conversation: MSConversation) {
@@ -61,12 +62,56 @@ class MessagesViewController: MSMessagesAppViewController {
         // Called before the extension transitions to a new presentation style.
     
         // Use this method to prepare for the change in presentation style.
+        presentViewController(with: presentationStyle)
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called after the extension transitions to a new presentation style.
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
+    }
+    
+    private func instantiateViewController() -> UIViewController {
+        
+        // Instantiate a `instantiateViewController` and present it.
+
+       guard let controller = (storyboard?.instantiateViewController(withIdentifier: TestViewController.storyBoardIdentifier)) as? TestViewController  else { fatalError("Unable to instantiate an IceCreamsViewController from the storyboard") }
+        
+        return controller
+    }
+    
+    
+    private func presentViewController(with presentationStyle: MSMessagesAppPresentationStyle) {
+        let controller: UIViewController
+        
+        controller = instantiateViewController()
+        
+        // Remove any existing child controllers.
+        for child in childViewControllers {
+            child.willMove(toParentViewController: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParentViewController()
+        }
+        
+        // Embed the new controller.
+        addChildViewController(controller)
+        
+        controller.view.frame = view.bounds
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(controller.view)
+        
+        controller.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        controller.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        //sample code in ice cream builder
+        // controller.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        // controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        // solution
+        controller.view.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        controller.view.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
+        
+        controller.didMove(toParentViewController: self)
     }
 
 }

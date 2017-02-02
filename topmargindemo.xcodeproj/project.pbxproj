@@ -13,6 +13,7 @@
 		8C32CF7B1E42AC230000376F /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C32CF7A1E42AC230000376F /* MessagesViewController.swift */; };
 		8C32CF7E1E42AC230000376F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C32CF7C1E42AC230000376F /* MainInterface.storyboard */; };
 		8C32CF801E42AC230000376F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C32CF7F1E42AC230000376F /* Assets.xcassets */; };
+		8C32CF8C1E42B3830000376F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C32CF8B1E42B3830000376F /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8C32CF7D1E42AC230000376F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8C32CF7F1E42AC230000376F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C32CF811E42AC230000376F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C32CF8B1E42B3830000376F /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				8C32CF7A1E42AC230000376F /* MessagesViewController.swift */,
 				8C32CF7C1E42AC230000376F /* MainInterface.storyboard */,
+				8C32CF8B1E42B3830000376F /* TestViewController.swift */,
 				8C32CF7F1E42AC230000376F /* Assets.xcassets */,
 				8C32CF811E42AC230000376F /* Info.plist */,
 			);
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C32CF8C1E42B3830000376F /* TestViewController.swift in Sources */,
 				8C32CF7B1E42AC230000376F /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
